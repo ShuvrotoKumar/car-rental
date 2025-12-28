@@ -82,24 +82,24 @@ export default function EnjoyEveryMileBanner() {
               </div>
             </div>
 
-            <div className="hidden md:flex justify-end" aria-hidden="true">
-              <div className="h-[180px] w-[280px] opacity-25">
-                <svg
-                  viewBox="0 0 400 250"
-                  className="h-full w-full"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M80 140c6-34 35-60 70-64l93-9c35-3 70 8 96 32l36 33c14 13 22 31 22 50v10c0 12-10 22-22 22H50c-12 0-22-10-22-22v-20c0-7 1-14 3-21l49-11Z"
-                    fill="rgba(0,0,0,0.55)"
+            <div className="hidden md:flex justify-center items-center relative">
+              <div className="relative">
+                {/* Background Gradient Shadow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-purple-800/20 rounded-lg transform translate-y-4 blur-xl"></div>
+                
+                {/* Car Image */}
+                <div className="relative w-[400px] h-[250px]">
+                  <img 
+                    src="/images/title.png" 
+                    alt="Premium Car" 
+                    className="w-full h-full object-contain relative z-10 transition-transform duration-300 hover:scale-105"
+                    style={{ objectPosition: 'center' }}
                   />
-                  <path
-                    d="M145 83c-11 1-21 10-25 20l-9 28h190l-17-38c-5-11-16-17-28-16l-111 6Z"
-                    fill="rgba(0,0,0,0.55)"
-                  />
-                  <circle cx="128" cy="195" r="26" fill="rgba(0,0,0,0.65)" />
-                  <circle cx="320" cy="195" r="26" fill="rgba(0,0,0,0.65)" />
-                </svg>
+                </div>
+                
+                {/* Decorative Elements
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-orange-500/20 rounded-full blur-xl"></div> 
+                <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div> */}
               </div>
             </div>
           </div>

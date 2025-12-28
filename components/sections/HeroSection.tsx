@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -23,9 +24,9 @@ export default function HeroSection() {
             Aliquam adipiscing velit semper morbi. Purus non eu cursus porttitor
             tristique et gravida. Quis nunc interdum gravida ullamcorper
           </p>
-          <Button className="bg-orange-500 text-white hover:bg-orange-600 px-8 py-3 font-semibold rounded-lg">
+          <Link href="/vehicles" className="bg-orange-500 text-white hover:bg-orange-600 px-8 py-3 font-semibold rounded-lg">
             View all cars
-          </Button>
+          </Link>
         </div>
         
         {/* Booking Form */}

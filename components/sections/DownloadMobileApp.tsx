@@ -62,7 +62,7 @@ export default function DownloadMobileApp() {
             </div>
           </div>
 
-          <div className="relative flex justify-center md:justify-end mr-52">
+          <div className="relative flex justify-center md:justify-end mr-52 transition-transform duration-300 hover:scale-105">
             <div className="relative h-[260px] w-[260px]">
               <div className="absolute right-0 top-2 h-[240px] w-[140px] rounded-[28px] border-4 border-black bg-white" />
               <div className="absolute right-16 top-8 h-[240px] w-[140px] rounded-[28px] border-4 border-black bg-white" />
