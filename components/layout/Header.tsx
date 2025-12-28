@@ -40,11 +40,11 @@ export default function Header() {
           </Link>
         </div>
         <div className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="text-gray-600 hover:text-gray-900">Home</Link>
-          <Link href="/vehicles" className="text-gray-600 hover:text-gray-900">Vehicles</Link>
-          <Link href="/vehicles/mercedes-sedan" className="text-gray-600 hover:text-gray-900">Details</Link>
-          <Link href="/about" className="text-gray-600 hover:text-gray-900">About Us</Link>
-          <Link href="/contact" className="text-gray-600 hover:text-gray-900">Contact Us</Link>
+          <Link href="/" className="text-gray-600 hover:text-blue-600">Home</Link>
+          <Link href="/vehicles" className="text-gray-600 hover:text-blue-600">Vehicles</Link>
+          <Link href="/vehicles/mercedes-sedan" className="text-gray-600 hover:text-blue-600">Details</Link>
+          <Link href="/about" className="text-gray-600 hover:text-blue-600">About Us</Link>
+          <Link href="/contact" className="text-gray-600 hover:text-blue-600">Contact Us</Link>
         </div>
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">

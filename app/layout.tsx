@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Frontend App",
-  description: "A modern Next.js application with scalable architecture",
+  title: "Car Rental",
+  description: "Rent premium cars with ease - Modern Car Rental application with seamless booking experience for luxury vehicles",
 };
 
 export default function RootLayout({

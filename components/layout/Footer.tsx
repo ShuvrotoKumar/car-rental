@@ -94,22 +94,22 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-gray-900">Useful links</h3>
             <ul className="mt-4 space-y-2 text-xs text-gray-600">
-              <li><Link href="/about" className="hover:text-gray-900">About us</Link></li>
-              <li><Link href="/contact" className="hover:text-gray-900">Contact us</Link></li>
-              <li><Link href="/gallery" className="hover:text-gray-900">Gallery</Link></li>
-              <li><Link href="/blog" className="hover:text-gray-900">Blog</Link></li>
-              <li><Link href="/faq" className="hover:text-gray-900">F.A.Q</Link></li>
+              <li><Link href="/about" className="hover:text-blue-600">About us</Link></li>
+              <li><Link href="/contact" className="hover:text-blue-600">Contact us</Link></li>
+              <li><Link href="/gallery" className="hover:text-blue-600">Gallery</Link></li>
+              <li><Link href="/blog" className="hover:text-blue-600">Blog</Link></li>
+              <li><Link href="/faq" className="hover:text-blue-600">F.A.Q</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold text-gray-900">Vehicles</h3>
             <ul className="mt-4 space-y-2 text-xs text-gray-600">
-              <li><Link href="/vehicles?category=Sedan" className="hover:text-gray-900">Sedan</Link></li>
-              <li><Link href="/vehicles?category=Cabriolet" className="hover:text-gray-900">Cabriolet</Link></li>
-              <li><Link href="/vehicles?category=Pickup" className="hover:text-gray-900">Pickup</Link></li>
-              <li><Link href="/vehicles?category=Minivan" className="hover:text-gray-900">Minivan</Link></li>
-              <li><Link href="/vehicles?category=Suv" className="hover:text-gray-900">SUV</Link></li>
+              <li><Link href="/vehicles?category=Sedan" className="hover:text-blue-600">Sedan</Link></li>
+              <li><Link href="/vehicles?category=Cabriolet" className="hover:text-blue-600">Cabriolet</Link></li>
+              <li><Link href="/vehicles?category=Pickup" className="hover:text-blue-600">Pickup</Link></li>
+              <li><Link href="/vehicles?category=Minivan" className="hover:text-blue-600">Minivan</Link></li>
+              <li><Link href="/vehicles?category=SUV" className="hover:text-blue-600">SUV</Link></li>
             </ul>
           </div>
 
