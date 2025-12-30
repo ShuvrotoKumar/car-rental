@@ -35,27 +35,6 @@ export default function EnjoyEveryMileBanner() {
                 />
               </svg>
             </div>
-
-            <div className="absolute right-[-40px] bottom-[-30px] opacity-25">
-              <svg
-                width="380"
-                height="220"
-                viewBox="0 0 380 220"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M74 138c5-29 30-52 60-55l80-8c30-3 60 7 82 27l32 30c12 11 19 27 19 44v8c0 10-8 18-18 18H43c-10 0-18-8-18-18v-18c0-6 1-12 2-18l47-10Z"
-                  fill="rgba(0,0,0,0.35)"
-                />
-                <path
-                  d="M130 92c-9 1-17 8-20 16l-8 22h160l-14-30c-4-9-13-14-23-13l-95 5Z"
-                  fill="rgba(0,0,0,0.35)"
-                />
-                <circle cx="106" cy="176" r="22" fill="rgba(0,0,0,0.42)" />
-                <circle cx="288" cy="176" r="22" fill="rgba(0,0,0,0.42)" />
-              </svg>
-            </div>
           </div>
 
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -97,9 +76,9 @@ export default function EnjoyEveryMileBanner() {
                   />
                 </div>
                 
-                {/* Decorative Elements
+                {/* Decorative Elements */}
                 <div className="absolute -top-4 -right-4 w-20 h-20 bg-orange-500/20 rounded-full blur-xl"></div> 
-                <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div> */}
+                <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div> 
               </div>
             </div>
           </div>

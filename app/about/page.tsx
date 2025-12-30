@@ -1,9 +1,36 @@
 
+'use client';
+
 import Image from "next/image";
+import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export default function AboutPage() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [countdown, setCountdown] = useState(5);
+
+  const handlePlayVideo = () => {
+    setIsPlaying(true);
+    setCountdown(5);
+    
+    // Start countdown
+    const countdownInterval = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(countdownInterval);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    
+    // Auto-stop after 5 seconds
+    setTimeout(() => {
+      setIsPlaying(false);
+      clearInterval(countdownInterval);
+    }, 5000);
+  };
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -59,20 +86,58 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-10">
-            <div className="relative h-[320px] w-full overflow-hidden rounded-3xl bg-gray-100 md:h-[420px]">
-              <Image
-                src="/images/hero-bg.jpg"
-                alt="About video"
-                fill
-                className="object-cover"
-                priority={false}
-              />
-              <div className="absolute inset-0 bg-black/10" aria-hidden="true" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-600 shadow-sm">
-                  <div className="h-0 w-0 border-y-[7px] border-y-transparent border-l-[12px] border-l-white ml-1" />
+            <div className="relative h-[320px] w-full overflow-hidden rounded-3xl md:h-[420px]">
+              {!isPlaying ? (
+                <>
+                  <Image
+                    src="/images/hero-bg.jpg"
+                    alt="About video"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <button
+                      onClick={handlePlayVideo}
+                      className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:bg-white transition-colors cursor-pointer"
+                      aria-label="Play video"
+                    >
+                      <div className="h-0 w-0 border-y-[10px] border-y-transparent border-l-[16px] border-l-purple-600 ml-1" />
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/hero-bg.jpg"
+                    alt="Video background"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-white text-center">
+                      <div className="text-6xl mb-4 animate-pulse">🚗</div>
+                      <div className="text-2xl font-bold mb-2">Video Playing...</div>
+                      <div className="text-lg">Auto-stops in 5 seconds</div>
+                      <div className="mt-4 flex justify-center space-x-2">
+                        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
+                        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '150ms'}}></div>
+                        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '300ms'}}></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mr-2 animate-pulse"></div>
+                    Playing...
+                  </div>
+                  <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+                    <div className="bg-black/50 text-white px-4 py-2 rounded-full">
+                      <div className="text-sm">⏱️ Auto-stop in: {countdown}s</div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
 
@@ -125,14 +190,17 @@ export default function AboutPage() {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="relative h-[260px] w-full max-w-[420px] overflow-hidden rounded-3xl bg-gray-100">
+              <div className="relative h-[260px] w-full max-w-[420px] overflow-hidden rounded-3xl">
                 <Image
                   src="/images/hero-bg.jpg"
                   alt="About image"
                   fill
                   className="object-cover"
-                  priority={false}
                 />
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  
+                </div>
               </div>
             </div>
           </div>
@@ -219,14 +287,11 @@ export default function AboutPage() {
                 <div className="text-lg font-bold">Looking for a car?</div>
                 <div className="mt-2 text-xs text-white/80">+537 547-6401</div>
               </div>
-              <div className="relative h-[200px] w-full overflow-hidden rounded-2xl bg-white/10">
-                <Image
-                  src="/images/hero-bg.jpg"
-                  alt="CTA"
-                  fill
-                  className="object-cover"
-                  priority={false}
-                />
+              <div className="relative h-[200px] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 flex items-center justify-center">
+                <div className="text-white text-center">
+                  <div className="text-4xl mb-2">🎯</div>
+                  <div className="text-sm font-medium">Call to Action</div>
+                </div>
               </div>
             </div>
           </div>
