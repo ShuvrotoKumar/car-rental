@@ -215,12 +215,18 @@ export default function AboutPage() {
               </div>
               <div className="flex flex-wrap items-center gap-3 md:justify-end">
                 <a href="#" className="inline-flex h-10 items-center gap-2 rounded-md bg-black px-3 text-white">
+                  <div className="w-6 h-6 bg-white rounded flex items-center justify-center">
+                    <div className="text-black text-xs font-bold">🍎</div>
+                  </div>
                   <div className="leading-none">
                     <div className="text-[9px] text-white/80">Download on the</div>
                     <div className="text-xs font-semibold">App Store</div>
                   </div>
                 </a>
                 <a href="#" className="inline-flex h-10 items-center gap-2 rounded-md bg-black px-3 text-white">
+                  <div className="w-6 h-6 bg-white rounded flex items-center justify-center">
+                    <div className="text-black text-xs font-bold">▶️</div>
+                  </div>
                   <div className="leading-none">
                     <div className="text-[9px] text-white/80">GET IT ON</div>
                     <div className="text-xs font-semibold">Google Play</div>
@@ -287,10 +293,15 @@ export default function AboutPage() {
                 <div className="text-lg font-bold">Looking for a car?</div>
                 <div className="mt-2 text-xs text-white/80">+537 547-6401</div>
               </div>
-              <div className="relative h-[200px] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 flex items-center justify-center">
-                <div className="text-white text-center">
-                  <div className="text-4xl mb-2">🎯</div>
-                  <div className="text-sm font-medium">Call to Action</div>
+              <div className="relative h-[200px] w-full overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/hero-bg.jpg"
+                  alt="Call to action"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 flex items-center justify-center">
                 </div>
               </div>
             </div>
