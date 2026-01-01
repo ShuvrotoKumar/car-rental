@@ -35,15 +35,12 @@ export default function VehicleDetailsPage() {
 
   useEffect(() => {
     const carSlug = params.slug;
-    console.log('Current slug:', carSlug); // Debug log
     const foundCar = carDatabase.find(c => c.slug === carSlug);
-    console.log('Found car:', foundCar); // Debug log
     
     if (foundCar) {
       setCar(foundCar);
     } else {
       // Car not found, redirect to vehicles page
-      console.log('Car not found, redirecting...'); // Debug log
       router.push('/vehicles');
     }
     setLoading(false);
@@ -60,9 +57,6 @@ export default function VehicleDetailsPage() {
   if (!car) {
     return null; // Will redirect
   }
-
-  // Debug display - remove later
-  console.log('Rendering car:', car);
 
   return (
     <div className="min-h-screen bg-white">

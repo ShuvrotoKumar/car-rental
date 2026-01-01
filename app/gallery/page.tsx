@@ -24,18 +24,18 @@ const categories: GalleryCategory[] = [
 ];
 
 const galleryImages: GalleryImage[] = [
-  { id: "1", src: "", alt: "Luxury sedan exterior", category: "Exterior", title: "Mercedes-Benz S-Class" },
-  { id: "2", src: "", alt: "Car interior dashboard", category: "Interior", title: "Premium Interior" },
-  { id: "3", src: "", alt: "Car wheel detail", category: "Details", title: "Alloy Wheels" },
-  { id: "4", src: "", alt: "SUV side view", category: "Exterior", title: "BMW X5" },
-  { id: "5", src: "", alt: "Leather seats", category: "Interior", title: "Luxury Seating" },
-  { id: "6", src: "", alt: "Engine bay", category: "Details", title: "V8 Engine" },
-  { id: "7", src: "", alt: "Car event gathering", category: "Events", title: "Car Meet 2024" },
-  { id: "8", src: "", alt: "Convertible top down", category: "Exterior", title: "Cabriolet" },
-  { id: "9", src: "", alt: "Navigation system", category: "Interior", title: "Infotainment" },
-  { id: "10", src: "", alt: "Headlight detail", category: "Details", title: "LED Lights" },
-  { id: "11", src: "", alt: "Racing event", category: "Events", title: "Track Day" },
-  { id: "12", src: "", alt: "Sports car rear", category: "Exterior", title: "Porsche 911" },
+  { id: "1", src: "/images/hero-bg.jpg", alt: "Luxury sedan exterior", category: "Exterior", title: "Mercedes-Benz S-Class" },
+  { id: "2", src: "/images/hero-bg.jpg", alt: "Car interior dashboard", category: "Interior", title: "Premium Interior" },
+  { id: "3", src: "/images/hero-bg.jpg", alt: "Car wheel detail", category: "Details", title: "Alloy Wheels" },
+  { id: "4", src: "/images/hero-bg.jpg", alt: "SUV side view", category: "Exterior", title: "BMW X5" },
+  { id: "5", src: "/images/hero-bg.jpg", alt: "Leather seats", category: "Interior", title: "Luxury Seating" },
+  { id: "6", src: "/images/hero-bg.jpg", alt: "Engine bay", category: "Details", title: "V8 Engine" },
+  { id: "7", src: "/images/hero-bg.jpg", alt: "Car event gathering", category: "Events", title: "Car Meet 2024" },
+  { id: "8", src: "/images/hero-bg.jpg", alt: "Convertible top down", category: "Exterior", title: "Cabriolet" },
+  { id: "9", src: "/images/hero-bg.jpg", alt: "Navigation system", category: "Interior", title: "Infotainment" },
+  { id: "10", src: "/images/hero-bg.jpg", alt: "Headlight detail", category: "Details", title: "LED Lights" },
+  { id: "11", src: "/images/hero-bg.jpg", alt: "Racing event", category: "Events", title: "Track Day" },
+  { id: "12", src: "/images/hero-bg.jpg", alt: "Sports car rear", category: "Exterior", title: "Porsche 911" },
 ];
 
 function CategoryPill({
@@ -110,17 +110,13 @@ function LightboxModal({
         </button>
         
         <div className="relative aspect-video">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 flex items-center justify-center">
-            <div className="text-white text-center">
-              <div className="text-4xl mb-2">
-                {image.category === 'Exterior' && '🚗'}
-                {image.category === 'Interior' && '🪑'}
-                {image.category === 'Details' && '⚙️'}
-                {image.category === 'Events' && '🏁'}
-              </div>
-              <div className="text-sm font-medium">{image.category}</div>
-            </div>
-          </div>
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            className="object-cover rounded-lg"
+            priority={true}
+          />
         </div>
         
         <div className="mt-4 text-center text-white">
@@ -187,17 +183,13 @@ export default function GalleryPage() {
                 className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer transition-all duration-300 hover:scale-105"
                 onClick={() => openLightbox(image)}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
-                  <div className="text-white text-center">
-                    <div className="text-3xl mb-1">
-                      {image.category === 'Exterior' && '🚗'}
-                      {image.category === 'Interior' && '🪑'}
-                      {image.category === 'Details' && '⚙️'}
-                      {image.category === 'Events' && '🏁'}
-                    </div>
-                    <div className="text-xs font-medium opacity-75">{image.category}</div>
-                  </div>
-                </div>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  priority={false}
+                />
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -206,10 +198,8 @@ export default function GalleryPage() {
                   </div>
                 </div>
                 
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <svg className="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                  </svg>
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 text-xs font-medium text-gray-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  {image.category}
                 </div>
               </div>
             ))}
