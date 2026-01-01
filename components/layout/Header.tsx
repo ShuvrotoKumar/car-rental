@@ -67,16 +67,7 @@ export default function Header() {
           </Link>
           
           {/* Dynamic Car Info in Header */}
-          {isCarDetailsPage && currentCar && (
-            <div className="hidden lg:flex items-center space-x-3 text-sm">
-              <span className="text-gray-500">Currently viewing:</span>
-              <span className="font-semibold text-gray-900">{currentCar.name}</span>
-              <span className="text-gray-400">•</span>
-              <span className="text-gray-600">{currentCar.type}</span>
-              <span className="text-gray-400">•</span>
-              <span className="font-bold text-purple-600">${currentCar.price}/day</span>
-            </div>
-          )}
+         
         </div>
         
         <div className="hidden md:flex items-center space-x-6">

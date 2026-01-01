@@ -26,18 +26,18 @@ const blogPosts: BlogPost[] = [
     date: "2024-12-15",
     category: "Technology",
     readTime: "5 min read",
-    imageUrl: "/images/blog/electric-cars.jpg"
+    imageUrl: "/images/hero-bg.jpg"
   },
   {
     id: 2,
     title: "Top 10 Road Trip Destinations for 2025",
-    excerpt: "Discover the most breathtaking road trip routes that should be on every traveler's bucket list for the coming year.",
+    excerpt: "Discover most breathtaking road trip routes that should be on every traveler's bucket list for the coming year.",
     content: "As we look ahead to 2025, road trips continue to be one of the most popular ways to explore...",
     author: "Mike Chen",
     date: "2024-12-10",
     category: "Travel",
     readTime: "8 min read",
-    imageUrl: "/images/blog/road-trip.jpg"
+    imageUrl: "/images/hero-bg.jpg"
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const blogPosts: BlogPost[] = [
     date: "2024-12-05",
     category: "Tips",
     readTime: "6 min read",
-    imageUrl: "/images/blog/car-selection.jpg"
+    imageUrl: "/images/hero-bg.jpg"
   },
   {
     id: 4,
@@ -59,7 +59,7 @@ const blogPosts: BlogPost[] = [
     date: "2024-11-28",
     category: "Industry",
     readTime: "7 min read",
-    imageUrl: "/images/blog/subscription.jpg"
+    imageUrl: "/images/hero-bg.jpg"
   },
   {
     id: 5,
@@ -70,7 +70,7 @@ const blogPosts: BlogPost[] = [
     date: "2024-11-20",
     category: "Sustainability",
     readTime: "5 min read",
-    imageUrl: "/images/blog/eco-friendly.jpg"
+    imageUrl: "/images/hero-bg.jpg"
   },
   {
     id: 6,
@@ -81,7 +81,7 @@ const blogPosts: BlogPost[] = [
     date: "2024-11-15",
     category: "Travel",
     readTime: "9 min read",
-    imageUrl: "/images/blog/international.jpg"
+    imageUrl: "/images/hero-bg.jpg"
   }
 ];
 
@@ -163,7 +163,18 @@ export default function BlogPage() {
                   key={post.id}
                   className="group cursor-pointer overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
-                  <div className="aspect-video w-full bg-gradient-to-br from-blue-100 to-indigo-200"></div>
+                  <div className="aspect-video w-full bg-gradient-to-br from-blue-100 to-indigo-200 flex items-center justify-center">
+                    <div className="text-white text-center">
+                      <div className="text-4xl mb-2">
+                        {post.category === 'Technology' && '⚡'}
+                        {post.category === 'Travel' && '✈️'}
+                        {post.category === 'Tips' && '💡'}
+                        {post.category === 'Industry' && '🏭'}
+                        {post.category === 'Sustainability' && '🌱'}
+                      </div>
+                      <div className="text-lg font-medium">Blog Post</div>
+                    </div>
+                  </div>
                   <div className="p-6">
                     <div className="mb-3 flex items-center justify-between">
                       <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800">
