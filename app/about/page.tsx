@@ -13,7 +13,7 @@ export default function AboutPage() {
   const handlePlayVideo = () => {
     setIsPlaying(true);
     setCountdown(5);
-    
+
     // Start countdown
     const countdownInterval = setInterval(() => {
       setCountdown((prev) => {
@@ -24,7 +24,7 @@ export default function AboutPage() {
         return prev - 1;
       });
     }, 1000);
-    
+
     // Auto-stop after 5 seconds
     setTimeout(() => {
       setIsPlaying(false);
@@ -121,9 +121,9 @@ export default function AboutPage() {
                       <div className="text-2xl font-bold mb-2">Video Playing...</div>
                       <div className="text-lg">Auto-stops in 5 seconds</div>
                       <div className="mt-4 flex justify-center space-x-2">
-                        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
-                        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '150ms'}}></div>
-                        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '300ms'}}></div>
+                        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                       </div>
                     </div>
                   </div>
@@ -199,7 +199,7 @@ export default function AboutPage() {
                 />
                 <div className="absolute inset-0 bg-black/20" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  
+
                 </div>
               </div>
             </div>

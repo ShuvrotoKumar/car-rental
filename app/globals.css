@@ -29,3 +29,27 @@ body {
   margin: 0;
   padding: 0;
 }
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 3s ease-in-out forwards;
+  opacity: 0;
+}
