@@ -1,13 +1,16 @@
+'use client';
+
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ChooseCarSection() {
   const cars = [
-    { name: "Mercedes", type: "Sedan", price: 25, image: "/images/hero-bg.jpg" },
-    { name: "Mercedes", type: "Sport", price: 50, image: "/images/hero-bg.jpg" },
-    { name: "Mercedes", type: "Sedan", price: 45, image: "/images/hero-bg.jpg" },
-    { name: "Porsche", type: "SUV", price: 40, image: "/images/hero-bg.jpg" },
-    { name: "Toyota", type: "Sedan", price: 35, image: "/images/hero-bg.jpg" },
-    { name: "Porsche", type: "SUV", price: 50, image: "/images/hero-bg.jpg" },
+    { name: "Mercedes", type: "Sedan", price: 25, image: "/images/hero-bg.jpg", slug: "mercedes-sedan" },
+    { name: "Mercedes", type: "Sport", price: 50, image: "/images/hero-bg.jpg", slug: "mercedes-cabriolet" },
+    { name: "Mercedes", type: "Sedan", price: 45, image: "/images/hero-bg.jpg", slug: "mercedes-sedan-2" },
+    { name: "Porsche", type: "SUV", price: 40, image: "/images/hero-bg.jpg", slug: "porsche-suv" },
+    { name: "Toyota", type: "Sedan", price: 35, image: "/images/hero-bg.jpg", slug: "toyota-sedan" },
+    { name: "Porsche", type: "SUV", price: 50, image: "/images/hero-bg.jpg", slug: "porsche-suv-2" },
   ];
 
   return (
@@ -135,12 +138,12 @@ export default function ChooseCarSection() {
                   </div>
                 </div>
 
-                <button
-                  type="button"
-                  className="mt-4 w-full rounded-lg bg-orange-500 py-2 text-xs font-semibold text-white hover:bg-orange-600"
+                <Link
+                  href={`/vehicles/${car.slug}`}
+                  className="mt-4 block w-full rounded-lg bg-orange-500 py-2 text-xs font-semibold text-white hover:bg-orange-600 text-center transition-colors"
                 >
                   View Details
-                </button>
+                </Link>
               </div>
             </div>
           ))}

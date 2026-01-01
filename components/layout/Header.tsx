@@ -2,9 +2,36 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+interface Car {
+  name: string;
+  type: string;
+  price: number;
+  image: string;
+  slug: string;
+}
+
+const carDatabase: Car[] = [
+  { name: "Mercedes", type: "Sedan", price: 25, image: "/images/hero-bg.jpg", slug: "mercedes-sedan" },
+  { name: "Mercedes", type: "Cabriolet", price: 50, image: "/images/hero-bg.jpg", slug: "mercedes-cabriolet" },
+  { name: "Mercedes", type: "Sedan", price: 45, image: "/images/hero-bg.jpg", slug: "mercedes-sedan-2" },
+  { name: "Porsche", type: "SUV", price: 40, image: "/images/hero-bg.jpg", slug: "porsche-suv" },
+  { name: "Toyota", type: "Sedan", price: 35, image: "/images/hero-bg.jpg", slug: "toyota-sedan" },
+  { name: "Porsche", type: "SUV", price: 50, image: "/images/hero-bg.jpg", slug: "porsche-suv-2" },
+  { name: "Mercedes", type: "Minivan", price: 50, image: "/images/hero-bg.jpg", slug: "mercedes-minivan" },
+  { name: "Toyota", type: "Pickup", price: 60, image: "/images/hero-bg.jpg", slug: "toyota-pickup" },
+  { name: "Maybach", type: "Sedan", price: 70, image: "/images/hero-bg.jpg", slug: "maybach-sedan" },
+];
 
 export default function Header() {
   const [scrolled, setScrolled] = React.useState(false);
+  const pathname = usePathname();
+  
+  // Check if we're on a car details page and get car info
+  const isCarDetailsPage = pathname?.startsWith('/vehicles/') && pathname.split('/').length === 3;
+  const carSlug = isCarDetailsPage ? pathname.split('/')[2] : null;
+  const currentCar = carSlug ? carDatabase.find(car => car.slug === carSlug) : null;
 
   React.useEffect(() => {
     const onScroll = () => {
@@ -38,14 +65,34 @@ export default function Header() {
             </div>
             <span>Car Rental</span>
           </Link>
+          
+          {/* Dynamic Car Info in Header */}
+          {isCarDetailsPage && currentCar && (
+            <div className="hidden lg:flex items-center space-x-3 text-sm">
+              <span className="text-gray-500">Currently viewing:</span>
+              <span className="font-semibold text-gray-900">{currentCar.name}</span>
+              <span className="text-gray-400">•</span>
+              <span className="text-gray-600">{currentCar.type}</span>
+              <span className="text-gray-400">•</span>
+              <span className="font-bold text-purple-600">${currentCar.price}/day</span>
+            </div>
+          )}
         </div>
+        
         <div className="hidden md:flex items-center space-x-6">
           <Link href="/" className="text-gray-600 hover:text-blue-600">Home</Link>
           <Link href="/vehicles" className="text-gray-600 hover:text-blue-600">Vehicles</Link>
-          <Link href="/vehicles/mercedes-sedan" className="text-gray-600 hover:text-blue-600">Details</Link>
+          {isCarDetailsPage && currentCar ? (
+            <span className="text-gray-900 font-medium">
+              {currentCar.name} {currentCar.type} Details
+            </span>
+          ) : (
+            <Link href="/vehicles/mercedes-sedan" className="text-gray-600 hover:text-blue-600">Details</Link>
+          )}
           <Link href="/about" className="text-gray-600 hover:text-blue-600">About Us</Link>
           <Link href="/contact" className="text-gray-600 hover:text-blue-600">Contact Us</Link>
         </div>
+        
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
