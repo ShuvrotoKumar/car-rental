@@ -20,7 +20,7 @@ export default function FeatureCards() {
           
           {/* Comfort Card */}
           <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-            <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
               <FaShieldAlt className="w-10 h-10 text-purple-600" />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Comfort</h3>
