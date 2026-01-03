@@ -73,31 +73,31 @@ export default function Header() {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group">
+          <Link href="/" className="relative text-gray-600 hover:text-purple-600 transition-all duration-300 ease-out group">
             <span className="relative z-10">Home</span>
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 ease-out group-hover:w-full"></span>
           </Link>
-          <Link href="/vehicles" className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group">
+          <Link href="/vehicles" className="relative text-gray-600 hover:text-purple-600 transition-all duration-300 ease-out group">
             <span className="relative z-10">Vehicles</span>
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 ease-out group-hover:w-full"></span>
           </Link>
           {isCarDetailsPage && currentCar ? (
             <span className="text-gray-900 font-medium">
                Details
             </span>
           ) : (
-            <Link href="/vehicles/mercedes-sedan" className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group">
+            <Link href="/vehicles/mercedes-sedan" className="relative text-gray-600 hover:text-purple-600 transition-all duration-300 ease-out group">
               <span className="relative z-10">Details</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 ease-out group-hover:w-full"></span>
             </Link>
           )}
-          <Link href="/about" className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group">
+          <Link href="/about" className="relative text-gray-600 hover:text-purple-600 transition-all duration-300 ease-out group">
             <span className="relative z-10">About Us</span>
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 ease-out group-hover:w-full"></span>
           </Link>
-          <Link href="/contact" className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group">
+          <Link href="/contact" className="relative text-gray-600 hover:text-purple-600 transition-all duration-300 ease-out group">
             <span className="relative z-10">Contact Us</span>
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 ease-out group-hover:w-full"></span>
           </Link>
         </div>
         
@@ -139,7 +139,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="relative z-10">Home</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
               <Link 
                 href="/vehicles" 
@@ -147,7 +147,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="relative z-10">Vehicles</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
               {isCarDetailsPage && currentCar ? (
                 <span className="text-gray-900 font-medium py-2">
@@ -160,7 +160,7 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="relative z-10">Details</span>
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 ease-out group-hover:w-full"></span>
                 </Link>
               )}
               <Link 
@@ -169,7 +169,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="relative z-10">About Us</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
               <Link 
                 href="/contact" 
@@ -177,7 +177,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="relative z-10">Contact Us</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
               
               {/* Mobile Contact Info */}
