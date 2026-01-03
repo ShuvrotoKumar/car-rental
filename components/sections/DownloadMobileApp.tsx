@@ -3,7 +3,7 @@ export default function DownloadMobileApp() {
     <section className="bg-white py-16">
       <div className="mx-auto max-w-screen-2xl px-6 md:px-10 lg:px-16 xl:px-24">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-          <div className="ml-82">
+          <div className="mx-auto md:ml-82 md:mx-0">
             <h2 className="text-3xl font-bold leading-tight text-gray-900">
               Download
               <br />

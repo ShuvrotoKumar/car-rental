@@ -170,7 +170,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-purple-800/90 to-purple-900/90 rounded-[100px]" aria-hidden="true"></div>
       <div className="relative grid md:grid-cols-2 gap-12 items-center px-6 md:px-10 lg:px-16 xl:px-24 w-full max-w-screen-2xl">
         <div className="text-white">
-          <h1 className="text-5xl font-bold mb-6 leading-tight">
+          <h1 className="text-5xl font-bold mb-6 leading-tight mt-8">
             <span className="inline-block">
               <span 
                 style={{
