@@ -26,6 +26,7 @@ const carDatabase: Car[] = [
 
 export default function Header() {
   const [scrolled, setScrolled] = React.useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const pathname = usePathname();
   
   // Check if we're on a car details page and get car info
@@ -70,6 +71,7 @@ export default function Header() {
          
         </div>
         
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           <Link href="/" className="text-gray-600 hover:text-blue-600">Home</Link>
           <Link href="/vehicles" className="text-gray-600 hover:text-blue-600">Vehicles</Link>
@@ -84,7 +86,21 @@ export default function Header() {
           <Link href="/contact" className="text-gray-600 hover:text-blue-600">Contact Us</Link>
         </div>
         
-        <div className="flex items-center space-x-2">
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <div className="w-6 h-5 flex flex-col justify-center items-center">
+            <span className={`block w-6 h-0.5 bg-gray-900 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+            <span className={`block w-6 h-0.5 bg-gray-900 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : 'my-1'}`}></span>
+            <span className={`block w-6 h-0.5 bg-gray-900 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+          </div>
+        </button>
+        
+        {/* Desktop Contact Info */}
+        <div className="hidden md:flex items-center space-x-2">
           <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6.7-6.7A19.79 19.79 0 0 1 2 4.18 2 2 0 0 1 4.18 2h3a2 2 0 0 1 2 1.72c.1.95.45 1.84 1 2.61l.71.71a2 2 0 0 1 0 2.82L9.18 12.8a15 15 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.82 0l.71.71c.77.55 1.66.9 2.61 1A2 2 0 0 1 22 16.92z"/>
@@ -96,6 +112,70 @@ export default function Header() {
           </div>
         </div>
       </div>
+      
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200">
+          <div className="mx-auto max-w-screen-2xl px-6 py-4 md:px-10 lg:px-16 xl:px-24">
+            <div className="flex flex-col space-y-4">
+              <Link 
+                href="/" 
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                href="/vehicles" 
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Vehicles
+              </Link>
+              {isCarDetailsPage && currentCar ? (
+                <span className="text-gray-900 font-medium">
+                  {currentCar.name} {currentCar.type} Details
+                </span>
+              ) : (
+                <Link 
+                  href="/vehicles/mercedes-sedan" 
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Details
+                </Link>
+              )}
+              <Link 
+                href="/about" 
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About Us
+              </Link>
+              <Link 
+                href="/contact" 
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
+              
+              {/* Mobile Contact Info */}
+              <div className="flex items-center space-x-2 pt-4 border-t border-gray-200">
+                <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6.7-6.7A19.79 19.79 0 0 1 2 4.18 2 2 0 0 1 4.18 2h3a2 2 0 0 1 2 1.72c.1.95.45 1.84 1 2.61l.71.71a2 2 0 0 1 0 2.82L9.18 12.8a15 15 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.82 0l.71.71c.77.55 1.66.9 2.61 1A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div className="text-sm">
+                  <div className="text-gray-600">Need help?</div>
+                  <div className="font-semibold text-gray-900">+996 247-1680</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
