@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface FormData {
   carType: string;
@@ -86,6 +86,28 @@ export default function HeroSection() {
   });
   const [showModal, setShowModal] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [animateText, setAnimateText] = useState(false);
+
+  useEffect(() => {
+    // Create animation cycle that repeats every 10 seconds
+    const animateCycle = () => {
+      // Phase 1: Reset to hidden state
+      setAnimateText(false);
+      
+      // Phase 2: Wait a moment, then show animation
+      setTimeout(() => {
+        setAnimateText(true);
+      }, 500);
+    };
+    
+    // Start immediately
+    animateCycle();
+    
+    // Repeat every 10 seconds
+    const interval = setInterval(animateCycle, 10000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
@@ -149,7 +171,30 @@ export default function HeroSection() {
       <div className="relative grid md:grid-cols-2 gap-12 items-center px-6 md:px-10 lg:px-16 xl:px-24 w-full max-w-screen-2xl">
         <div className="text-white">
           <h1 className="text-5xl font-bold mb-6 leading-tight">
-            Experience the road <br /> like never before
+            <span className="inline-block">
+              <span 
+                style={{
+                  display: 'inline-block',
+                  opacity: animateText ? 1 : 0,
+                  transform: animateText ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.9)',
+                  transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out'
+                }}
+              >
+                Experience the road
+              </span>
+              <br />
+              <span 
+                style={{
+                  display: 'inline-block',
+                  opacity: animateText ? 1 : 0,
+                  transform: animateText ? 'translateX(0) scale(1)' : 'translateX(-30px) scale(0.9)',
+                  transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+                  transitionDelay: animateText ? '0.6s' : '0s'
+                }}
+              >
+                like never before
+              </span>
+            </span>
           </h1>
           <p className="text-base mb-8 text-purple-100 max-w-md">
             Aliquam adipiscing velit semper morbi. Purus non eu cursus porttitor

@@ -107,6 +107,7 @@ export default function ContactPage() {
   });
   const [showModal, setShowModal] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [currentBookingData, setCurrentBookingData] = useState<FormData | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
@@ -130,6 +131,7 @@ export default function ContactPage() {
 
     // Show success modal with current form data
     const currentFormData = { ...formData };
+    setCurrentBookingData(currentFormData);
     setShowModal(true);
     
     // Reset form after showing modal
@@ -140,9 +142,6 @@ export default function ContactPage() {
       rentalDate: '',
       returnDate: ''
     });
-    
-    // Store current data for modal
-    (window as any).currentBookingData = currentFormData;
   };
 
   return (
@@ -358,7 +357,7 @@ export default function ContactPage() {
       <BookingModal 
         isOpen={showModal} 
         onClose={() => setShowModal(false)} 
-        bookingData={(window as any).currentBookingData || formData}
+        bookingData={currentBookingData || formData}
       />
 
       <Footer />
