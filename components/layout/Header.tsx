@@ -73,17 +73,32 @@ export default function Header() {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="text-gray-600 hover:text-blue-600">Home</Link>
-          <Link href="/vehicles" className="text-gray-600 hover:text-blue-600">Vehicles</Link>
+          <Link href="/" className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group">
+            <span className="relative z-10">Home</span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+          </Link>
+          <Link href="/vehicles" className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group">
+            <span className="relative z-10">Vehicles</span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+          </Link>
           {isCarDetailsPage && currentCar ? (
             <span className="text-gray-900 font-medium">
-              {currentCar.name} {currentCar.type} Details
+               Details
             </span>
           ) : (
-            <Link href="/vehicles/mercedes-sedan" className="text-gray-600 hover:text-blue-600">Details</Link>
+            <Link href="/vehicles/mercedes-sedan" className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group">
+              <span className="relative z-10">Details</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+            </Link>
           )}
-          <Link href="/about" className="text-gray-600 hover:text-blue-600">About Us</Link>
-          <Link href="/contact" className="text-gray-600 hover:text-blue-600">Contact Us</Link>
+          <Link href="/about" className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group">
+            <span className="relative z-10">About Us</span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+          </Link>
+          <Link href="/contact" className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group">
+            <span className="relative z-10">Contact Us</span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+          </Link>
         </div>
         
         {/* Mobile Menu Button */}
@@ -120,44 +135,49 @@ export default function Header() {
             <div className="flex flex-col space-y-4">
               <Link 
                 href="/" 
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Home
+                <span className="relative z-10">Home</span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
               <Link 
                 href="/vehicles" 
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Vehicles
+                <span className="relative z-10">Vehicles</span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
               {isCarDetailsPage && currentCar ? (
-                <span className="text-gray-900 font-medium">
+                <span className="text-gray-900 font-medium py-2">
                   {currentCar.name} {currentCar.type} Details
                 </span>
               ) : (
                 <Link 
                   href="/vehicles/mercedes-sedan" 
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                  className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Details
+                  <span className="relative z-10">Details</span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
                 </Link>
               )}
               <Link 
                 href="/about" 
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                About Us
+                <span className="relative z-10">About Us</span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
               <Link 
                 href="/contact" 
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="relative text-gray-600 hover:text-blue-600 transition-all duration-300 ease-out group py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Contact Us
+                <span className="relative z-10">Contact Us</span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
               
               {/* Mobile Contact Info */}
