@@ -51,9 +51,33 @@ body {
   }
 }
 
+/* New continuous loop animations */
+@keyframes continuous-loop {
+  0% {
+    opacity: 1;
+    transform: translateX(100px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+}
+
 .animate-slide-in-left {
   animation: slide-in-left 3s ease-in-out forwards;
   opacity: 0;
+}
+
+.animate-continuous {
+  animation: continuous-loop 4s ease-in-out infinite;
 }
 
 /* Modern text animations */

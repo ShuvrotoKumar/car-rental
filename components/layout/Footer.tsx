@@ -60,8 +60,8 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 gap-10 py-10 md:grid-cols-4">
           <div>
-            <h3 className="text-sm font-semibold text-gray-900">Faucibus faucibus pellentesque dictum turpis.</h3>
-            <p className="mt-3 text-xs leading-5 text-gray-500">
+            <h3 className="text-2xl font-semibold text-gray-900">Faucibus faucibus pellentesque dictum turpis.</h3>
+            <p className="mt-3 text-sm leading-5 text-gray-500">
               Id pellentesque turpis massa a id iaculis lorem t...
             </p>
 
@@ -92,32 +92,32 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-900">Useful links</h3>
-            <ul className="mt-4 space-y-2 text-xs text-gray-600">
-              <li><Link href="/about" className="hover:text-blue-600">About us</Link></li>
-              <li><Link href="/contact" className="hover:text-blue-600">Contact us</Link></li>
-              <li><Link href="/gallery" className="hover:text-blue-600">Gallery</Link></li>
-              <li><Link href="/blog" className="hover:text-blue-600">Blog</Link></li>
-              <li><Link href="/faq" className="hover:text-blue-600">F.A.Q</Link></li>
+            <h3 className="text-xl font-semibold text-gray-900">Useful links</h3>
+            <ul className="mt-4 space-y-2 text-lg text-gray-600">
+              <li><Link href="/about" className="hover:text-purple-600">About us</Link></li>
+              <li><Link href="/contact" className="hover:text-purple-600">Contact us</Link></li>
+              <li><Link href="/gallery" className="hover:text-purple-600">Gallery</Link></li>
+              <li><Link href="/blog" className="hover:text-purple-600">Blog</Link></li>
+              <li><Link href="/faq" className="hover:text-purple-600">F.A.Q</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-900">Vehicles</h3>
-            <ul className="mt-4 space-y-2 text-xs text-gray-600">
-              <li><Link href="/vehicles?category=Sedan" className="hover:text-blue-600">Sedan</Link></li>
-              <li><Link href="/vehicles?category=Cabriolet" className="hover:text-blue-600">Cabriolet</Link></li>
-              <li><Link href="/vehicles?category=Pickup" className="hover:text-blue-600">Pickup</Link></li>
-              <li><Link href="/vehicles?category=Minivan" className="hover:text-blue-600">Minivan</Link></li>
-              <li><Link href="/vehicles?category=SUV" className="hover:text-blue-600">SUV</Link></li>
+            <h3 className="text-xl font-semibold text-gray-900">Vehicles</h3>
+            <ul className="mt-4 space-y-2 text-xl text-gray-600">
+              <li><Link href="/vehicles?category=Sedan" className="hover:text-purple-600">Sedan</Link></li>
+              <li><Link href="/vehicles?category=Cabriolet" className="hover:text-purple-600">Cabriolet</Link></li>
+              <li><Link href="/vehicles?category=Pickup" className="hover:text-purple-600">Pickup</Link></li>
+              <li><Link href="/vehicles?category=Minivan" className="hover:text-purple-600">Minivan</Link></li>
+              <li><Link href="/vehicles?category=SUV" className="hover:text-purple-600">SUV</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-900">Download App</h3>
+            <h3 className="text-lg font-semibold text-gray-900">Download App</h3>
             <div className="mt-4 flex flex-col gap-3">
-              <a href="#" className="inline-flex h-10 items-center gap-2 rounded-md bg-black px-3 text-white">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <a href="#" className="inline-flex h-12 items-center gap-2 rounded-md bg-black px-4 text-white">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M16.7 13.8c0-2 1.6-3 1.7-3.1-1-.1-2.1.6-2.6 1.4-.7 1-1.2 2.3-1.2 3.6 0 .6.1 1.2.3 1.8.2.6.5 1.2.9 1.6.4.5 1 .8 1.6.8.6 0 1.1-.2 1.6-.4.5-.2 1-.4 1.6-.4.6 0 1.1.2 1.6.4.4.2.9.4 1.5.4.7 0 1.3-.3 1.8-.8.5-.5.9-1.1 1.1-1.8-.1 0-2.9-1.1-2.9-3.5Zm1-8.6c-.8 1-1 2.3-.9 3.4 1.1.1 2.2-.6 2.9-1.5.7-.8 1.1-2 1-3.2-1.1 0-2.3.6-3 1.3Z" />
                   <path d="M12.1 6.1c.2-.9.7-1.8 1.3-2.4-.7-.7-1.8-1.2-3-1.2C8.5 2.5 7 3.6 6 5.1 5 6.6 4.5 8.6 4.5 10.4c0 2.4.7 4.7 2 6.4.8 1 1.8 1.7 3 1.7.6 0 1.1-.1 1.6-.3.6-.2 1.1-.3 1.8-.3.7 0 1.2.1 1.8.3.5.2 1 .3 1.6.3 1 0 1.8-.5 2.5-1.3-.9-.4-1.7-1.1-2.3-2-.8-1.2-1.2-2.7-1.2-4.1 0-2.4 1-4.7 2.8-6.2-.7-.7-1.7-1.2-2.8-1.2-1 0-1.8.3-2.5.8-.5.4-.9.9-1.2 1.5Z" opacity="0.55" />
                 </svg>
@@ -127,8 +127,8 @@ export default function Footer() {
                 </div>
               </a>
 
-              <a href="#" className="inline-flex h-10 items-center gap-2 rounded-md bg-black px-3 text-white">
-                <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <a href="#" className="inline-flex h-12 items-center gap-2 rounded-md bg-black px-4 text-white">
+                <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M3 2l13 10L3 22V2z" fill="#34A853" />
                   <path d="M3 2l9.5 8.2L16 12 3 2z" fill="#4285F4" />
                   <path d="M3 22l9.5-8.2L16 12 3 22z" fill="#FBBC05" />

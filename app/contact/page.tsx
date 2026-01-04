@@ -327,12 +327,12 @@ export default function ContactPage() {
 
           <div className="mt-14 rounded-2xl bg-gray-50 py-8">
             <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-14 gap-y-6 px-6 text-gray-900">
-              <div className="text-2xl font-semibold tracking-tight animate-slide-in-left" style={{animationDelay: '0ms'}}>TOYOTA</div>
-              <div className="text-2xl font-semibold tracking-tight italic animate-slide-in-left" style={{animationDelay: '200ms'}}>Ford</div>
-              <div className="text-2xl font-semibold tracking-tight animate-slide-in-left" style={{animationDelay: '400ms'}}>Mercedes</div>
-              <div className="text-2xl font-semibold tracking-tight animate-slide-in-left" style={{animationDelay: '600ms'}}>Jeep</div>
-              <div className="text-2xl font-semibold tracking-tight animate-slide-in-left" style={{animationDelay: '800ms'}}>BMW</div>
-              <div className="text-2xl font-semibold tracking-tight animate-slide-in-left" style={{animationDelay: '1000ms'}}>AUDI</div>
+              <div className="text-2xl font-semibold tracking-tight animate-continuous" style={{animationDelay: '0ms'}}>TOYOTA</div>
+              <div className="text-2xl font-semibold tracking-tight italic animate-continuous" style={{animationDelay: '600ms'}}>Ford</div>
+              <div className="text-2xl font-semibold tracking-tight animate-continuous" style={{animationDelay: '1200ms'}}>Mercedes</div>
+              <div className="text-2xl font-semibold tracking-tight animate-continuous" style={{animationDelay: '1800ms'}}>Jeep</div>
+              <div className="text-2xl font-semibold tracking-tight animate-continuous" style={{animationDelay: '2400ms'}}>BMW</div>
+              <div className="text-2xl font-semibold tracking-tight animate-continuous" style={{animationDelay: '3000ms'}}>AUDI</div>
             </div>
           </div>
         </div>
