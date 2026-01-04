@@ -67,7 +67,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, bookingDat
         <div className="flex gap-3">
           <button
             onClick={onClose}
-            className="flex-1 bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors shadow-lg"
+            className="flex-1 bg-purple-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-600 transition-colors shadow-lg"
           >
             Great!
           </button>
@@ -86,7 +86,7 @@ function InfoPill({
 }) {
   return (
     <div className="flex items-center gap-3 rounded-2xl bg-gray-50 px-5 py-4">
-      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-white" aria-hidden="true">
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500 text-white" aria-hidden="true">
         <span className="text-sm font-bold">•</span>
       </div>
       <div className="text-xs text-gray-700">
@@ -169,7 +169,7 @@ export default function ContactPage() {
                       name="carType"
                       value={formData.carType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none"
+                      className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent appearance-none"
                     >
                       <option value="">Select your car type</option>
                       <option value="Sedan">Sedan</option>
@@ -196,7 +196,7 @@ export default function ContactPage() {
                         name="rentalLocation"
                         value={formData.rentalLocation}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none"
+                        className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent appearance-none"
                       >
                         <option value="">Select rental location</option>
                         <option value="Downtown">Downtown</option>
@@ -220,7 +220,7 @@ export default function ContactPage() {
                         name="returnLocation"
                         value={formData.returnLocation}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none"
+                        className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent appearance-none"
                       >
                         <option value="">Select return location</option>
                         <option value="Downtown">Downtown</option>
@@ -248,7 +248,7 @@ export default function ContactPage() {
                         type="date" 
                         value={formData.rentalDate}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                        className="w-full px-4 py-2 text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                       />
                     </div>
                   </div>
@@ -262,7 +262,7 @@ export default function ContactPage() {
                         type="date" 
                         value={formData.returnDate}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                       />
                     </div>
                   </div>
@@ -270,7 +270,7 @@ export default function ContactPage() {
                 
                 <button
                   type="submit"
-                  className="w-full bg-orange-500 text-white hover:bg-orange-600 py-3 font-semibold rounded-lg"
+                  className="w-full bg-purple-500 text-white hover:bg-purple-600 py-3 font-semibold rounded-lg"
                 >
                   Book now
                 </button>

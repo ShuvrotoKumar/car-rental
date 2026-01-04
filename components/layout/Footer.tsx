@@ -19,7 +19,7 @@ export default function Footer() {
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-white" aria-hidden="true">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500 text-white" aria-hidden="true">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 22s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
                   <path d="M12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" strokeWidth="2" />
@@ -32,7 +32,7 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-white" aria-hidden="true">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500 text-white" aria-hidden="true">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4 4h16v16H4V4Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
                   <path d="M4 7l8 6 8-6" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
@@ -45,7 +45,7 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-white" aria-hidden="true">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500 text-white" aria-hidden="true">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6.7-6.7A19.79 19.79 0 0 1 2 4.18 2 2 0 0 1 4.18 2h3a2 2 0 0 1 2 1.72c.1.95.45 1.84 1 2.61l.71.71a2 2 0 0 1 0 2.82L9.18 12.8a15 15 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.82 0l.71.71c.77.55 1.66.9 2.61 1A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
                 </svg>

@@ -66,7 +66,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, bookingDat
         <div className="flex gap-3">
           <button
             onClick={onClose}
-            className="flex-1 bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors shadow-lg"
+            className="flex-1 bg-purple-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-600 transition-colors shadow-lg"
           >
             Great!
           </button>
@@ -200,7 +200,7 @@ export default function HeroSection() {
             Aliquam adipiscing velit semper morbi. Purus non eu cursus porttitor
             tristique et gravida. Quis nunc interdum gravida ullamcorper
           </p>
-          <Link href="/vehicles" className="bg-orange-500 text-white hover:bg-orange-600 px-8 py-3 font-semibold rounded-lg">
+          <Link href="/vehicles" className="bg-orange-500 text-white hover:bg-orange-600 px-8 py-3 font-semibold rounded-lg transition-colors">
             View all cars
           </Link>
         </div>
@@ -219,7 +219,7 @@ export default function HeroSection() {
                   name="carType"
                   value={formData.carType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none"
+                  className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent appearance-none"
                 >
                   <option value="">Select your car type</option>
                   <option value="Sedan">Sedan</option>
@@ -246,7 +246,7 @@ export default function HeroSection() {
                     name="rentalLocation"
                     value={formData.rentalLocation}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none"
+                    className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent appearance-none"
                   >
                     <option value="">Select rental location</option>
                     <option value="Downtown">Downtown</option>
@@ -270,7 +270,7 @@ export default function HeroSection() {
                     name="returnLocation"
                     value={formData.returnLocation}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none"
+                    className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent appearance-none"
                   >
                     <option value="">Select return location</option>
                     <option value="Downtown">Downtown</option>
@@ -298,7 +298,7 @@ export default function HeroSection() {
                     type="date" 
                     value={formData.rentalDate}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -312,13 +312,13 @@ export default function HeroSection() {
                     type="date" 
                     value={formData.returnDate}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                   />
                 </div>
               </div>
             </div>
             
-            <Button type="submit" className="w-full bg-orange-500 text-white hover:bg-orange-600 py-3 font-semibold rounded-lg">
+            <Button type="submit" className="w-full bg-purple-500 text-white hover:bg-purple-600 py-3 font-semibold rounded-lg">
               Book now
             </Button>
           </form>

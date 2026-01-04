@@ -140,7 +140,7 @@ export default function ChooseCarSection() {
 
                 <Link
                   href={`/vehicles/${car.slug}`}
-                  className="mt-4 block w-full rounded-lg bg-orange-500 py-2 text-xs font-semibold text-white hover:bg-orange-600 text-center transition-colors"
+                  className="mt-4 block w-full rounded-lg bg-purple-500 py-2 text-xs font-semibold text-white hover:bg-purple-600 text-center transition-colors"
                 >
                   View Details
                 </Link>

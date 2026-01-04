@@ -102,10 +102,10 @@ export default function BlogPage() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+      <section className="bg-gradient-to-br from-purple-50 to-indigo-100 py-20">
         <div className="mx-auto max-w-screen-2xl px-6 md:px-10 lg:px-16 xl:px-24">
           <div className="text-center">
-            <div className="text-sm font-semibold text-blue-900">Our Blog</div>
+            <div className="text-sm font-semibold text-purple-900">Our Blog</div>
             <h1 className="mt-2 text-4xl font-bold text-gray-900 md:text-5xl">Stories & Insights</h1>
             <div className="mt-2 text-xs text-gray-600">Home / Blog</div>
           </div>
@@ -122,7 +122,7 @@ export default function BlogPage() {
                   key={category}
                   onClick={() => setSelectedCategory(category)}
                   className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${selectedCategory === category
-                      ? "bg-blue-600 text-white"
+                      ? "bg-purple-600 text-white"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     }`}
                 >
@@ -136,7 +136,7 @@ export default function BlogPage() {
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full rounded-full border border-gray-300 text-gray-800 px-4 py-2 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full rounded-full border border-gray-300 text-gray-800 px-4 py-2 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               />
               <svg
                 className="absolute left-3 top-2.5 h-4 w-4 text-gray-400"
@@ -162,7 +162,7 @@ export default function BlogPage() {
                   key={post.id}
                   className="group cursor-pointer overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
-                  <div className="aspect-video w-full bg-gradient-to-br from-blue-100 to-indigo-200 flex items-center justify-center">
+                  <div className="aspect-video w-full bg-gradient-to-br from-purple-100 to-indigo-200 flex items-center justify-center">
                     <div className="text-white text-center">
                       <div className="text-4xl mb-2">
                         {post.category === 'Technology' && '⚡'}
@@ -176,12 +176,12 @@ export default function BlogPage() {
                   </div>
                   <div className="p-6">
                     <div className="mb-3 flex items-center justify-between">
-                      <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800">
+                      <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-800">
                         {post.category}
                       </span>
                       <span className="text-xs text-gray-500">{post.readTime}</span>
                     </div>
-                    <h3 className="mb-2 text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    <h3 className="mb-2 text-lg font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">
                       {post.title}
                     </h3>
                     <p className="mb-4 text-sm text-gray-600 line-clamp-3">{post.excerpt}</p>
