@@ -51,10 +51,14 @@ export default function EnjoyEveryMileBanner() {
 
               <div className="mt-8 inline-flex items-center rounded-full bg-white px-4 py-2 shadow-sm">
                 <span className="text-xs font-medium text-gray-500">City</span>
-                <div className="w-36" />
+                <input
+                  type="text"
+                  placeholder="Enter city name"
+                  className="w-36 px-2 py-1 text-xs text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-0"
+                />
                 <button
                   type="button"
-                  className="rounded-full bg-orange-500 px-6 py-2 text-xs font-semibold text-white hover:bg-orange-600"
+                  className="rounded-full bg-purple-500 px-6 py-2 text-xs font-semibold text-white hover:bg-purple-600"
                 >
                   Search
                 </button>
@@ -77,8 +81,8 @@ export default function EnjoyEveryMileBanner() {
                 </div>
                 
                 {/* Decorative Elements */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-orange-500/20 rounded-full blur-xl"></div> 
-                <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div> 
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-purple-500/20 rounded-full blur-xl"></div> 
+                <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-purple-400/40 rounded-full blur-xl"></div> 
               </div>
             </div>
           </div>
