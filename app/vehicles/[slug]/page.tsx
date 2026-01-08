@@ -32,6 +32,7 @@ export default function VehicleDetailsPage() {
   const router = useRouter();
   const [car, setCar] = useState<Car | null>(null);
   const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<string>("");
 
   useEffect(() => {
     const carSlug = params.slug;
@@ -39,6 +40,7 @@ export default function VehicleDetailsPage() {
     
     if (foundCar) {
       setCar(foundCar);
+      setSelectedImage(foundCar.image);
     } else {
       // Car not found, redirect to vehicles page
       router.push('/vehicles');
@@ -75,14 +77,41 @@ export default function VehicleDetailsPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Car Image */}
-            <div className="relative h-96 lg:h-full min-h-[500px] rounded-2xl overflow-hidden bg-gray-200">
-              <Image
-                src={car.image}
-                alt={car.name}
-                fill
-                className="object-cover"
-                priority={true}
-              />
+            <div className="space-y-4">
+              <div className="relative h-[600px] lg:h-[700px] rounded-2xl overflow-hidden bg-gray-200">
+                <Image
+                  src={selectedImage}
+                  alt={car.name}
+                  fill
+                  className="object-cover"
+                  priority={true}
+                />
+              </div>
+              
+              {/* Thumbnail Images */}
+              <div className="grid grid-cols-4 gap-2">
+                {[
+                  '/images/hero-bg.jpg',
+                  '/images/title.png',
+                  '/images/hero-bg.jpg',
+                  '/images/title.png'
+                ].map((image, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedImage(image)}
+                    className={`relative h-24 rounded-lg overflow-hidden border-2 transition-all ${
+                      selectedImage === image ? 'border-purple-600' : 'border-gray-200 hover:border-gray-400'
+                    }`}
+                  >
+                    <Image
+                      src={image}
+                      alt={`${car.name} view ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Car Details */}
