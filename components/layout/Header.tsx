@@ -114,16 +114,35 @@ export default function Header() {
           </div>
         </button>
         
-        {/* Desktop Contact Info */}
-        <div className="hidden md:flex items-center space-x-2">
-          <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6.7-6.7A19.79 19.79 0 0 1 2 4.18 2 2 0 0 1 4.18 2h3a2 2 0 0 1 2 1.72c.1.95.45 1.84 1 2.61l.71.71a2 2 0 0 1 0 2.82L9.18 12.8a15 15 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.82 0l.71.71c.77.55 1.66.9 2.61 1A2 2 0 0 1 22 16.92z"/>
-            </svg>
+        {/* Desktop Navigation Right */}
+        <div className="hidden md:flex items-center space-x-6">
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6.7-6.7A19.79 19.79 0 0 1 2 4.18 2 2 0 0 1 4.18 2h3a2 2 0 0 1 2 1.72c.1.95.45 1.84 1 2.61l.71.71a2 2 0 0 1 0 2.82L9.18 12.8a15 15 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.82 0l.71.71c.77.55 1.66.9 2.61 1A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div className="text-sm">
+              <div className="text-gray-600">Need help?</div>
+              <div className="font-semibold text-gray-900">+996 247-1680</div>
+            </div>
           </div>
-          <div className="text-sm">
-            <div className="text-gray-600">Need help?</div>
-            <div className="font-semibold text-gray-900">+996 247-1680</div>
+          
+          <div className="h-6 w-px bg-gray-200"></div>
+          
+          <div className="flex items-center space-x-4">
+            <Link 
+              href="/login" 
+              className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors duration-200"
+            >
+              Log in
+            </Link>
+            <Link 
+              href="/signup" 
+              className="px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 transition-colors duration-200"
+            >
+              Sign up
+            </Link>
           </div>
         </div>
       </div>
@@ -191,6 +210,22 @@ export default function Header() {
                   <div className="text-gray-600">Need help?</div>
                   <div className="font-semibold text-gray-900">+996 247-1680</div>
                 </div>
+              </div>
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <Link 
+                  href="/login" 
+                  className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Log in
+                </Link>
+                <Link 
+                  href="/signup" 
+                  className="block w-full mt-2 px-4 py-2 text-left text-white bg-purple-600 hover:bg-purple-700 rounded-md transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Sign up
+                </Link>
               </div>
             </div>
           </div>
