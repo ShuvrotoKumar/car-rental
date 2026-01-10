@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ const SignupPage = () => {
   });
   const [error, setError] = useState('');
   const router = useRouter();
+  const { login } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -38,12 +40,10 @@ const SignupPage = () => {
     }
 
     try {
-      // TODO: Implement actual signup logic here
-      console.log('Signup attempt with:', { 
-        name: formData.name, 
-        email: formData.email 
-      });
-      // router.push('/login'); // Redirect to login after successful signup
+      // In a real app, you would make an API call to register the user
+      // For now, we'll simulate a successful registration and log the user in
+      await login(formData.email, formData.password);
+      router.push('/');
     } catch (err) {
       setError('Failed to create account. Please try again.');
       console.error('Signup error:', err);

@@ -3,12 +3,14 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
+  const { login } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,9 +23,8 @@ const LoginPage = () => {
     }
 
     try {
-      // TODO: Implement actual authentication logic here
-      console.log('Login attempt with:', { email });
-      // router.push('/dashboard'); // Redirect after successful login
+      await login(email, password);
+      router.push('/');
     } catch (err) {
       setError('Failed to log in. Please check your credentials.');
       console.error('Login error:', err);
