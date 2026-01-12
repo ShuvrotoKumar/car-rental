@@ -2,7 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useAuth } from "@/contexts/AuthContext";
+import { Menu, Transition } from '@headlessui/react';
+import { Fragment } from 'react';
+import { FiUser, FiLogOut, FiChevronDown } from 'react-icons/fi';
+import { FaUser } from 'react-icons/fa';
 
 interface Car {
   name: string;
@@ -24,10 +29,16 @@ const carDatabase: Car[] = [
   { name: "Maybach", type: "Sedan", price: 70, image: "/images/hero-bg.jpg", slug: "maybach-sedan" },
 ];
 
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(' ');
+}
+
 export default function Header() {
   const [scrolled, setScrolled] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const { user, logout } = useAuth();
   
   // Check if we're on a car details page and get car info
   const isCarDetailsPage = pathname?.startsWith('/vehicles/') && pathname.split('/').length === 3;
@@ -53,9 +64,8 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-6 py-4 md:px-10 lg:px-16 xl:px-24">
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2 text-xl font-bold text-gray-900">
-            {/* <div className="w-6 h-6 bg-gray-900 rounded-sm"></div> */}
             <div className="h-8 w-8 text-black" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
                 <path d="M3 13l2-5h14l2 5" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
@@ -66,9 +76,6 @@ export default function Header() {
             </div>
             <span>Car Rental</span>
           </Link>
-          
-          {/* Dynamic Car Info in Header */}
-         
         </div>
         
         {/* Desktop Navigation */}
@@ -101,6 +108,8 @@ export default function Header() {
           </Link>
         </div>
         
+        {/* Desktop Navigation Right - Moved after the mobile menu button for better organization */}
+        
         {/* Mobile Menu Button */}
         <button
           className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors"
@@ -114,8 +123,111 @@ export default function Header() {
           </div>
         </button>
         
-        {/* Desktop Contact Info */}
-        <div className="hidden md:flex items-center space-x-2">
+        {/* Desktop Navigation Right */}
+        <div className="hidden md:flex items-center space-x-6">
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6.7-6.7A19.79 19.79 0 0 1 2 4.18 2 2 0 0 1 4.18 2h3a2 2 0 0 1 2 1.72c.1.95.45 1.84 1 2.61l.71.71a2 2 0 0 1 0 2.82L9.18 12.8a15 15 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.82 0l.71.71c.77.55 1.66.9 2.61 1A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div className="text-sm">
+              <div className="text-gray-600">Need help?</div>
+              <div className="font-semibold text-gray-900">+996 247-1680</div>
+            </div>
+          </div>
+          
+          <div className="h-6 w-px bg-gray-200"></div>
+          
+          {user ? (
+            <Menu as="div" className="relative">
+              <Menu.Button className="flex items-center space-x-2 text-sm rounded-full focus:outline-none">
+                <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
+                  <FaUser className="h-4 w-4 text-white" />
+                </div>
+                <span className="text-gray-700">{user.name}</span>
+                <FiChevronDown className="h-4 w-4 text-gray-500" />
+              </Menu.Button>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Item>
+                    {({ active }) => (
+                      <Link
+                        href="/dashboard"
+                        className={classNames(
+                          active ? 'bg-gray-100' : '',
+                          'block px-4 py-2 text-sm text-gray-700 flex items-center space-x-2'
+                        )}
+                      >
+                        <FiUser className="h-4 w-4" />
+                        <span>Dashboard</span>
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <Link
+                        href="/profile"
+                        className={classNames(
+                          active ? 'bg-gray-100' : '',
+                          'block px-4 py-2 text-sm text-gray-700 flex items-center space-x-2'
+                        )}
+                      >
+                        <FiUser className="h-4 w-4" />
+                        <span>Your Profile</span>
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        onClick={() => {
+                          logout();
+                          router.push('/');
+                        }}
+                        className={classNames(
+                          active ? 'bg-gray-100' : '',
+                          'w-full text-left px-4 py-2 text-sm text-gray-700 flex items-center space-x-2'
+                        )}
+                      >
+                        <FiLogOut className="h-4 w-4" />
+                        <span>Sign out</span>
+                      </button>
+                    )}
+                  </Menu.Item>
+                </Menu.Items>
+              </Transition>
+            </Menu>
+          ) : (
+            <div className="flex items-center space-x-4">
+              <Link 
+                href="/login" 
+                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors duration-200"
+              >
+                Log in
+              </Link>
+              <Link 
+                href="/signup" 
+                className="px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 transition-colors duration-200"
+              >
+                Sign up
+              </Link>
+            </div>
+          )}
+        </div>
+      </div>
+      
+      {/* Desktop Navigation Right - Moved here */}
+      {/* <div className="hidden md:flex items-center space-x-6">
+        <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6.7-6.7A19.79 19.79 0 0 1 2 4.18 2 2 0 0 1 4.18 2h3a2 2 0 0 1 2 1.72c.1.95.45 1.84 1 2.61l.71.71a2 2 0 0 1 0 2.82L9.18 12.8a15 15 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.82 0l.71.71c.77.55 1.66.9 2.61 1A2 2 0 0 1 22 16.92z"/>
@@ -126,7 +238,93 @@ export default function Header() {
             <div className="font-semibold text-gray-900">+996 247-1680</div>
           </div>
         </div>
-      </div>
+        
+        <div className="h-6 w-px bg-gray-200"></div>
+        
+        {user ? (
+          <Menu as="div" className="relative">
+            <Menu.Button className="flex items-center space-x-2 text-sm rounded-full focus:outline-none">
+              <div className="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                <FiUser className="h-4 w-4" />
+              </div>
+              <span className="text-gray-700">{user.name}</span>
+              <FiChevronDown className="h-4 w-4 text-gray-500" />
+            </Menu.Button>
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
+            >
+              <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Item>
+                  {({ active }) => (
+                    <Link
+                      href="/dashboard"
+                      className={classNames(
+                        active ? 'bg-gray-100' : '',
+                        'block px-4 py-2 text-sm text-gray-700 flex items-center space-x-2'
+                      )}
+                    >
+                      <FiUser className="h-4 w-4" />
+                      <span>Dashboard</span>
+                    </Link>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <Link
+                      href="/profile"
+                      className={classNames(
+                        active ? 'bg-gray-100' : '',
+                        'block px-4 py-2 text-sm text-gray-700 flex items-center space-x-2'
+                      )}
+                    >
+                      <FiUser className="h-4 w-4" />
+                      <span>Your Profile</span>
+                    </Link>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={() => {
+                        logout();
+                        router.push('/');
+                      }}
+                      className={classNames(
+                        active ? 'bg-gray-100' : '',
+                        'w-full text-left px-4 py-2 text-sm text-gray-700 flex items-center space-x-2'
+                      )}
+                    >
+                      <FiLogOut className="h-4 w-4" />
+                      <span>Sign out</span>
+                    </button>
+                  )}
+                </Menu.Item>
+              </Menu.Items>
+            </Transition>
+          </Menu>
+        ) : (
+          <div className="flex items-center space-x-4">
+            <Link 
+              href="/login" 
+              className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors duration-200"
+            >
+              Log in
+            </Link>
+            <Link 
+              href="/signup" 
+              className="px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 transition-colors duration-200"
+            >
+              Sign up
+            </Link>
+          </div>
+        )}
+      </div> */}
       
       {/* Mobile Menu */}
       {mobileMenuOpen && (
@@ -192,6 +390,55 @@ export default function Header() {
                   <div className="font-semibold text-gray-900">+996 247-1680</div>
                 </div>
               </div>
+              
+              {user ? (
+                <div className="mt-4 pt-4 border-t border-gray-200">
+                  <Link 
+                    href="/dashboard" 
+                    className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 rounded-md transition-colors flex items-center space-x-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <FiUser className="h-4 w-4" />
+                    <span>Dashboard</span>
+                  </Link>
+                  <Link 
+                    href="/profile" 
+                    className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 rounded-md transition-colors flex items-center space-x-2 mt-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <FiUser className="h-4 w-4" />
+                    <span>Your Profile</span>
+                  </Link>
+                  <button
+                    onClick={() => {
+                      logout();
+                      setMobileMenuOpen(false);
+                      router.push('/');
+                    }}
+                    className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md flex items-center space-x-2 mt-2"
+                  >
+                    <FiLogOut className="h-4 w-4" />
+                    <span>Sign out</span>
+                  </button>
+                </div>
+              ) : (
+                <div className="mt-4 pt-4 border-t border-gray-200">
+                  <Link 
+                    href="/login" 
+                    className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Log in
+                  </Link>
+                  <Link 
+                    href="/signup" 
+                    className="block w-full mt-2 px-4 py-2 text-left text-white bg-purple-600 hover:bg-purple-700 rounded-md transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Sign up
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
